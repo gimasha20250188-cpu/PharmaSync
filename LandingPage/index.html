@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PharmaSync – QR-Based Digital Prescription Management and Medicine Delivery System</title>
+<meta name="description" content="PharmaSync digitalizes prescription management with expirable QR codes, a pharmacy portal that validates them, and a medicine delivery service.">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="splash-in">
+    <div class="splash-logo"><img src="images/logo-icon.png" alt="" width="120" height="120"></div>
+    <div class="splash-word">Pharma<span>Sync</span></div>
+    <p class="splash-tag">QR-based digital prescriptions</p>
+    <div class="splash-bar"><i></i></div>
+  </div>
+</div>
+<script>
+(function(){
+  var s=document.getElementById('splash');
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){s.remove();return;}
+  document.body.classList.add('splash-on');
+  setTimeout(function(){document.body.classList.remove('splash-on');},2900);
+  setTimeout(function(){s.remove();},3500);
+})();
+</script>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="#home" aria-label="PharmaSync home"><img src="images/logo-icon.png" alt="" width="42" height="42"><b>Pharma<span>Sync</span></b></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+    <label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+    <nav class="nav" aria-label="Main">
+      <span class="ind" aria-hidden="true"></span>
+      <a href="#home" data-spy="home">Home</a>
+      <a href="#services" data-spy="services">Services</a>
+      <a href="#team" data-spy="team">Development Team</a>
+      <a class="nav-cta" href="#customer">Explore the app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-copy">
+      <img class="hero-mark" src="images/logo-icon.png" alt="PharmaSync logo" width="76" height="76">
+      <p class="badge">QR-Based Digital Prescription Management</p>
+      <h1>Digital prescriptions, verified by QR and delivered to your door.</h1>
+      <p class="lead">PharmaSync replaces paper prescriptions with secure digital prescriptions from verified, registered doctors, expirable QR codes that pharmacies validate instantly, and a medicine delivery service for patients who cannot travel.</p>
+      <div class="actions">
+        <a class="btn btn-light" href="#customer">Explore the app</a>
+        <a class="btn btn-ghost" href="#team">Meet the team</a>
+      </div>
+      <p class="hint">Tap a side phone to rotate it to the front. Tap the front phone for details.</p>
+    </div>
+
+    <div class="stagebox" id="phones">
+      <div class="stage">
+        <button class="phone p pos-left" data-id="pharmacist" data-name="Pharmacist Portal" type="button">
+          <span class="screen"><span class="tag">Pharmacist Portal</span><span class="shot"><img src="images/pharmacist.webp" alt="" width="720" height="1532"></span></span>
+        </button>
+        <button class="phone p pos-centre" data-id="customer" data-name="Customer Portal" type="button">
+          <span class="screen"><span class="tag">Customer Portal</span><span class="shot"><img src="images/customer.webp" alt="" width="720" height="2357"></span></span>
+        </button>
+        <button class="phone p pos-right" data-id="doctor" data-name="Doctor Portal" type="button">
+          <span class="screen"><span class="tag">Doctor Portal</span><span class="shot"><img src="images/doctor.webp" alt="" width="720" height="1532"></span></span>
+        </button>
+      </div>
+
+      <div class="dpanel panel" data-id="pharmacist" role="region" aria-label="Pharmacist Portal details">
+        <h2>Pharmacy Portal and Login</h2>
+        <p>Pharmacies register with their official pharmacy license number and are verified by the system administrator. Prescription-related actions are restricted to authorized roles, and every scan and sale is recorded against the logged-in user.</p>
+        <ul class="ticks">
+          <li>Individual, role-based accounts for pharmacist, cashier and manager</li>
+          <li>Scan prescription QR codes and view the validated prescription</li>
+          <li>Process sales and issue digital receipts</li>
+          <li>Manage medicines, inventory, batches and expiry dates</li>
+          <li>View and accept online and delivery orders</li>
+          <li>Generate sales, stock and prescription-fill reports</li>
+        </ul>
+        <button class="btn btn-solid back" type="button">Back to all portals</button>
+      </div>
+      <div class="dpanel panel" data-id="customer" role="region" aria-label="Customer Portal details">
+        <h2>Customer Application</h2>
+        <p>One place to find medicines, hold prescriptions and order, including delivery for those who cannot travel.</p>
+        <ul class="ticks">
+          <li>View and search medicines by medicine code or actual name</li>
+          <li>Order eligible non-prescription medicines</li>
+          <li>Scan or upload prescription QR codes and view prescription information</li>
+          <li>Order prescribed medicines and receive order and purchase confirmations</li>
+          <li>Request medicine delivery to a specified location</li>
+          <li>View previous orders, purchases and prescriptions</li>
+        </ul>
+        <button class="btn btn-solid back" type="button">Back to all portals</button>
+      </div>
+      <div class="dpanel panel" data-id="doctor" role="region" aria-label="Doctor Portal details">
+        <h2>Doctor Application / Portal</h2>
+        <p>Doctors register using their official doctor registration number. After verification they can:</p>
+        <ul class="ticks">
+          <li>Search medicines, select them by medicine code and view the actual medicine name</li>
+          <li>Create digital prescriptions with dosage and required quantity</li>
+          <li>Set the validity/expiration period of a prescription</li>
+          <li>Generate a unique QR code and send it to the patient through the application, or print it</li>
+          <li>Receive notifications when the prescribed medicine is purchased</li>
+          <li>View a history of issued prescriptions and their status</li>
+        </ul>
+        <button class="btn btn-solid back" type="button">Back to all portals</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem, solution, objectives -->
+  <section class="section bg-mesh" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Digitalizing the current prescription management system</h2>
+        <p>Prescription handling in Sri Lanka still relies heavily on paper documents, and pharmacy counters often run on point-of-sale systems that handle billing and stock but know nothing about the prescription behind a sale.</p>
+      </div>
+      <div class="grid">
+        <article class="box">
+          <h3>The problem</h3>
+          <ul class="ticks">
+            <li>Prescription and medicine purchasing processes are paper-based, difficult to verify, and disconnected from pharmacy sales and stock systems</li>
+            <li>Paper prescriptions can be lost, altered, reused or shared</li>
+            <li>Patients may have to travel considerable distances to find an open pharmacy</li>
+            <li>Doctors usually do not know whether, when or where a prescription was filled</li>
+          </ul>
+        </article>
+        <article class="box">
+          <h3>The proposed solution</h3>
+          <p>A digital medicine ordering and prescription management platform combining:</p>
+          <ul class="ticks">
+            <li>Customer application</li>
+            <li>Doctor application/portal</li>
+            <li>Digital prescription management</li>
+            <li>Expirable QR-code prescription system</li>
+            <li>Pharmacy portal</li>
+            <li>Medicine purchase notifications</li>
+            <li>Medicine delivery service</li>
+            <li>Licensed pharmacy partnerships</li>
+          </ul>
+        </article>
+        <article class="box">
+          <h3>Project objectives</h3>
+          <ul class="ticks">
+            <li>Replace paper prescriptions with secure digital prescriptions issued by verified, registered doctors</li>
+            <li>Provide expirable, single-purpose QR codes that pharmacies can validate instantly</li>
+            <li>Track the full lifecycle of every prescription with an audit trail</li>
+            <li>Improve the pharmacy system with QR scanning, validation, batch/expiry-aware stock control, digital receipts and reporting</li>
+            <li>Notify doctors when their prescriptions are used</li>
+            <li>Let patients order medicines and receive them by delivery</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer -->
+  <section class="section tint" id="customer">
+    <div class="wrap split">
+      <div class="phone single">
+        <span class="screen"><span class="tag">Customer Portal</span><span class="shot"><img src="images/customer.webp" alt="Customer portal on a phone" width="720" height="2357" loading="lazy"></span></span>
+      </div>
+      <div class="panel">
+        <h2>Customer Application</h2>
+        <p>The customer side of the system allows users to:</p>
+        <ul class="ticks cols">
+          <li>Register and create an account</li>
+          <li>View and search available medicines</li>
+          <li>Identify medicines using medicine codes and actual medicine names</li>
+          <li>Order eligible non-prescription medicines</li>
+          <li>Scan or upload prescription QR codes</li>
+          <li>View prescription information</li>
+          <li>Order prescribed medicines</li>
+          <li>Receive order and purchase confirmations</li>
+          <li>Request medicine delivery to a specified location</li>
+          <li>View previous orders, purchases and prescriptions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prescription management -->
+  <section class="section dark qr" id="services">
+    <div class="wrap">
+      <h2 class="centre-title">Introducing Digital Prescription Management System</h2>
+      <p class="band">The central module that creates, stores and tracks all digital prescriptions. Each prescription moves through a defined lifecycle, and every change is recorded.</p>
+      <div class="showcase">
+        <article class="card c1"><h3>Expirable QR code</h3><p>After creating a prescription, the doctor generates a unique QR code. The doctor determines the validity period; after expiration the QR code becomes invalid.</p></article>
+        <article class="card c2"><h3>Minimal QR data</h3><p>The QR code carries a unique prescription ID and a digitally signed token, not the medical details. Details are retrieved from the backend only after validation.</p></article>
+        <div class="phone mid">
+          <span class="screen"><span class="tag">QR System</span><span class="shot"><img src="images/qr.webp" alt="Prescription QR code and lifecycle" width="720" height="1531" loading="lazy"></span></span>
+        </div>
+        <article class="card c3"><h3>Validation rules</h3><p>Not expired or cancelled; issuing doctor verified and active; not already fully dispensed; prescribed medicines and quantities match the items being sold.</p></article>
+        <article class="card c4"><h3>Partial dispensing and audit</h3><p>Where the doctor allows it, partial dispensing is recorded and the remainder stays available until expiry. Every scan and validation attempt is logged with time and location/pharmacy.</p></article>
+      </div>
+
+      <h3 class="sub">Prescription lifecycle</h3>
+      <div class="states">
+        <div class="st"><b>Issued</b><span>Doctor has created the prescription and generated the QR code.</span></div>
+        <div class="st"><b>Sent / Delivered</b><span>QR code has been sent to the patient’s application or printed.</span></div>
+        <div class="st"><b>Validated</b><span>QR code has been scanned and passed all validation checks.</span></div>
+        <div class="st"><b>Partially Dispensed</b><span>Some of the prescribed quantity has been sold; the remainder is still valid.</span></div>
+        <div class="st"><b>Fully Dispensed</b><span>All prescribed quantity has been sold; the QR code can no longer be used.</span></div>
+        <div class="st"><b>Expired</b><span>Validity period ended before the prescription was fully used.</span></div>
+        <div class="st"><b>Cancelled</b><span>Doctor withdrew the prescription.</span></div>
+      </div>
+      <div class="grid two" style="margin-top:28px">
+        <article class="box">
+          <h3>Who uses it</h3>
+          <ul class="ticks">
+            <li>Doctors can issue, view, track and cancel prescriptions</li>
+            <li>Patients can view their active and past prescriptions in one place</li>
+            <li>Pharmacies see the verified prescription directly in the POS, with no paper handling</li>
+            <li>Administrators can audit prescription activity and generate reports</li>
+          </ul>
+        </article>
+        <article class="box">
+          <h3>Misuse prevention</h3>
+          <p>The mechanism is intended to reduce repeated use of old prescriptions, unauthorized sharing, repeated purchasing using the same prescription, altered prescriptions and potential misuse of prescription medicines.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery -->
+  <section class="section maps" id="delivery">
+    <iframe class="map-bg" title="Map of Colombo 07 delivery area" src="https://www.google.com/maps?q=Ward+Place,+Colombo+07,+Sri+Lanka&amp;z=14&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1" aria-hidden="true"></iframe>
+    <div class="map-veil"></div>
+    <div class="wrap">
+      <h2 class="centre-title">Medicine Delivery System</h2>
+      <p class="band">For customers who cannot travel to a pharmacy, PharmaSync provides a simple delivery workflow. In the prototype it is kept intentionally lightweight, covering request, rider assignment, verification and status updates.</p>
+      <div class="showcase">
+        <article class="card c1"><h3>Customer request</h3><p>The customer submits an order or prescription QR through the app.</p></article>
+        <article class="card c2"><h3>Pharmacy accepts</h3><p>The participating pharmacy accepts it in the POS, and a rider receives the delivery request.</p></article>
+        <div class="phone mid">
+          <span class="screen"><span class="tag">Delivery System</span><span class="shot"><img src="images/delivery.webp" alt="Rider workspace showing the next delivery" width="720" height="2590" loading="lazy"></span></span>
+        </div>
+        <article class="card c3"><h3>Verified at handover</h3><p>The rider verifies the prescription/QR at handover, collects the medicine from the pharmacy and delivers it to the specified location.</p></article>
+        <article class="card c4"><h3>Who benefits</h3><p>Elderly people, people with mobility difficulties and customers far from an open pharmacy.</p></article>
+      </div>
+    </div>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Ward+Place+Colombo+07" target="_blank" rel="noopener">Open in Google Maps</a>
+  </section>
+
+  <!-- Security -->
+  <section class="section bg-plus" id="security">
+    <div class="wrap">
+      <div class="sec-head"><h2>Security and quality</h2></div>
+      <div class="grid two">
+        <article class="box">
+          <h3>Security considerations</h3>
+          <ul class="ticks">
+            <li>Secure authentication and role-based access control, including individual pharmacy staff accounts</li>
+            <li>Doctor verification against registration numbers and pharmacy verification against license numbers</li>
+            <li>Unique prescription IDs and digitally signed, expirable QR codes</li>
+            <li>Server-side prescription validation and redemption tracking</li>
+            <li>Secure storage of user and prescription information</li>
+            <li>Transaction records and audit logs of every scan and sale</li>
+            <li>Protection against repeated use of expired or fully dispensed prescriptions</li>
+            <li>Secure communication between applications, POS and backend</li>
+          </ul>
+        </article>
+        <article class="box">
+          <h3>Non-functional requirements</h3>
+          <ul class="ticks">
+            <li><strong>Security:</strong> authentication, authorization, protected prescription information and secure communication</li>
+            <li><strong>Reliability:</strong> sales and prescription status recorded consistently, so a prescription cannot be used twice</li>
+            <li><strong>Usability:</strong> simple for patients, doctors, counter staff and riders; the POS should be fast during busy periods</li>
+            <li><strong>Performance:</strong> QR validation within about a second</li>
+            <li><strong>Scalability:</strong> support additional pharmacies, doctors and users</li>
+            <li><strong>Maintainability:</strong> modular components that can be maintained and extended</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">The system is designed with applicable pharmaceutical, privacy, data protection and healthcare requirements in mind. Actual deployment would require the appropriate regulatory approvals and licensed partners.</p>
+    </div>
+  </section>
+
+  <section class="section team" id="team">
+    <div class="wrap">
+      <h2>Development Team</h2>
+      <p>The people behind PharmaSync.</p>
+      <div class="team-grid">
+        <article class="member">
+          <div class="photo"><span aria-hidden="true">AP</span><img src="images/awinka.jpg" alt="Awinka Perera" width="300" height="300" loading="lazy" onerror="this.remove()"></div>
+          <h3>Awinka Perera</h3>
+          <a href="mailto:shehan.20250372@iit.ac.lk">shehan.20250372@iit.ac.lk</a>
+        </article>
+        <article class="member">
+          <div class="photo"><span aria-hidden="true">GR</span><img src="images/gimasha.jpg" alt="Gimasha Rathnayake" width="300" height="300" loading="lazy" onerror="this.remove()"></div>
+          <h3>Gimasha Rathnayake</h3>
+          <a href="mailto:gimasha.20250188@iit.ac.lk">gimasha.20250188@iit.ac.lk</a>
+        </article>
+        <article class="member">
+          <div class="photo"><span aria-hidden="true">SN</span><img src="images/senuri.jpg" alt="Senuri Nirasha" width="300" height="300" loading="lazy" onerror="this.remove()"></div>
+          <h3>Senuri Nirasha</h3>
+          <a href="mailto:senuri.20250173@iit.ac.lk">senuri.20250173@iit.ac.lk</a>
+        </article>
+        <article class="member">
+          <div class="photo"><span aria-hidden="true">KM</span><img src="images/kavindu.jpg" alt="Kavindu Matheeshan" width="300" height="300" loading="lazy" onerror="this.remove()"></div>
+          <h3>Kavindu Matheeshan</h3>
+          <a href="mailto:kavindu.20250888@iit.ac.lk">kavindu.20250888@iit.ac.lk</a>
+        </article>
+        <article class="member">
+          <div class="photo"><span aria-hidden="true">DD</span><img src="images/dulain.jpg" alt="Dulain Dissanayake" width="300" height="300" loading="lazy" onerror="this.remove()"></div>
+          <h3>Dulain Dissanayake</h3>
+          <a href="mailto:dulain.20250131@iit.ac.lk">dulain.20250131@iit.ac.lk</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="foot-logo" href="#home" aria-label="PharmaSync home"><img src="images/logo-full.png" alt="PharmaSync" width="95" height="72"></a>
+    <p>QR-Based Digital Prescription Management and Medicine Delivery System · Illustrative prototype, all people, credentials and transactions shown are sample data.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var b=document.getElementById('to-top');
+  function s(){b.classList.toggle('show',scrollY>600);}
+  addEventListener('scroll',s,{passive:true});s();
+  b.addEventListener('click',function(){
+    var r=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    scrollTo({top:0,behavior:r?'auto':'smooth'});
+  });
+})();
+(function(){
+  var hd=document.querySelector('.site-header'),links=[].slice.call(document.querySelectorAll('.nav a[data-spy]')),ind=document.querySelector('.ind'),tog=document.getElementById('menu-toggle'),t;
+  var map={home:'home',about:'services',customer:'services',services:'services',delivery:'services',security:'services',team:'team'};
+  var secs=Object.keys(map).map(function(id){return document.getElementById(id)}).filter(Boolean);
+  function update(){
+    hd.classList.toggle('scrolled',scrollY>20);
+    var cur='home',y=innerHeight*.35;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top<=y)cur=map[s.id];});
+    if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='team';
+    links.forEach(function(a){var on=a.dataset.spy===cur;a.classList.toggle('is-active',on);
+      if(on&&ind){ind.style.left=a.offsetLeft+'px';ind.style.width=a.offsetWidth+'px';ind.style.opacity=1;}});
+  }
+  addEventListener('scroll',function(){cancelAnimationFrame(t);t=requestAnimationFrame(update);},{passive:true});
+  addEventListener('resize',update);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(update);
+  update();
+  [].slice.call(document.querySelectorAll('.nav a')).forEach(function(a){a.addEventListener('click',function(){tog.checked=false;});});
+})();
+(function(){
+  var box=document.getElementById('phones'); if(!box) return;
+  var stage=box.querySelector('.stage'),ph=[].slice.call(box.querySelectorAll('.p')),panels=[].slice.call(box.querySelectorAll('.dpanel')),busy=false,sx=null;
+  function pos(el){return el.className.match(/pos-(left|centre|right)/)[1];}
+  function setPos(el,p){el.classList.remove('pos-left','pos-centre','pos-right');el.classList.add('pos-'+p);}
+  function at(p){return ph.filter(function(x){return pos(x)===p})[0];}
+  function isOpen(){return box.classList.contains('detail');}
+  function select(id){ph.forEach(function(p){p.classList.toggle('sel',p.dataset.id===id)});panels.forEach(function(d){d.classList.toggle('show',d.dataset.id===id)});}
+  function labels(){ph.forEach(function(p){var n=p.dataset.name,s=pos(p);
+    p.setAttribute('aria-label',isOpen()?(p.classList.contains('sel')?n+': close details':n):(s==='centre'?n+': show details':n+': rotate to front'));});}
+  function wrap(el,to,anim){el.classList.add('wrapping',anim);setPos(el,to);setTimeout(function(){el.classList.remove('wrapping',anim);},720);}
+  function rotate(from){
+    if(busy||isOpen())return; busy=true;
+    var L=at('left'),C=at('centre'),R=at('right');
+    if(from==='left'){setPos(L,'centre');setPos(C,'right');wrap(R,'left','r2l');}
+    else{setPos(R,'centre');setPos(C,'left');wrap(L,'right','l2r');}
+    labels();setTimeout(function(){busy=false;},720);
+  }
+  function close(){box.classList.remove('detail');select(null);labels();}
+  ph.forEach(function(p){p.addEventListener('click',function(){
+    if(busy)return;
+    if(isOpen()){if(p.classList.contains('sel'))close();return;}
+    var s=pos(p);
+    if(s==='centre'){box.classList.add('detail');select(p.dataset.id);labels();}else rotate(s);
+  });});
+  panels.forEach(function(d){d.querySelector('.back').addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')close();
+    var r=document.getElementById('home').getBoundingClientRect();
+    if(r.bottom<80||r.top>innerHeight)return;
+    if(e.key==='ArrowLeft')rotate('left'); if(e.key==='ArrowRight')rotate('right');
+  });
+  stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  stage.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;
+    if(Math.abs(dx)>50)rotate(dx>0?'left':'right');},{passive:true});
+  labels();
+})();
+</script>
+</body>
+</html>
